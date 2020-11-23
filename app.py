@@ -4,6 +4,10 @@ from flask import Flask
 def create_app() -> Flask:
     app = Flask(__name__)
 
+    @app.route("/")
+    def home() -> str:
+        return "Racine projet"
+
     @app.route("/hello/text")
     def hello_text() -> str:
         return "Hello, World!"
